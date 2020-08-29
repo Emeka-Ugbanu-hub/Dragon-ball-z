@@ -5,8 +5,8 @@ const goku = document.querySelector(".goku");
 const ball = document.querySelector(".ball__two");
 const jiren =  document.querySelector(".jiren");
 const ball2 = document.querySelector(".ball");
-const scoreone = document.querySelector(".scoreone");
-const scoretwo = document.querySelector(".scoretwo");
+const healthone = document.querySelector(".healthone");
+const healthtwo = document.querySelector(".healthtwo");
 const opacity = document.querySelector(".moving__ball__two");
 const endgame = document.querySelector(".game__over");
 const winner = document.querySelector(".winner__text");
@@ -14,8 +14,6 @@ const restart = document.querySelector(".restart");
 const sprite = document.querySelector(".sprite");
 const sprite1 = document.querySelector(".sprite__two");
 var righty = 1;
-var score = 1;
-var score2 = 1; 
 var play = document.querySelector(".play");
 var stop = document.querySelector(".stop");
 play.addEventListener("click",function(){
@@ -33,17 +31,17 @@ start.addEventListener("click",function(){
 })
 
 window.addEventListener("keydown",function(e){  
-    if (e.keyCode == '38') {
+    if (e.keyCode == '87') {
         goku.style.top = -righty++ + "em"; 
-        if (   goku.style.top === -13 + "em") {
-         righty = 13;
+        if (   goku.style.top === -11 + "em") {
+         righty = 11;
       }
      
     }
-    else if(e.keyCode == '40'){     
+    else if(e.keyCode == '90'){     
         goku.style.top = -righty-- + "em";  
-        if (  goku.style.top === 15 + "em") {
-          righty = -15;
+        if (  goku.style.top === 16 + "em") {
+          righty = -16;
       } 
     }
     else if(e.keyCode == "13" ){ 
@@ -63,8 +61,7 @@ window.addEventListener("keydown",function(e){
             iterations: 1
           }); 
           opacity.style.opacity=0.9;  
-    }
-        
+  }
 })
 
 function collision(ball2,goku){
@@ -74,9 +71,8 @@ function collision(ball2,goku){
        if (playerBound.x > carRightBound.x - playerBound.width && playerBound.x < carRightBound.x + carRightBound.width && playerBound.y > carRightBound.y - playerBound.height && playerBound.y < carRightBound.y + carRightBound.height) {
         var audio4 = document.getElementById("audio__five");
         audio4.play();
-        scoreone.innerHTML=score++;
-        var end1 = scoreone.innerHTML;
-        if(end1 == 5){
+      healthtwo.value -=5;
+        if(healthtwo.value == 0){
           game.style.display="none";
           endgame.style.display="block";
           winner.innerHTML="JIREN !WINS";
@@ -84,13 +80,12 @@ function collision(ball2,goku){
   audio1.play();
   audio.pause();
         }
-        else if(end1 == 4){
-sprite1.src="beaten.png";
-var audio7 = document.getElementById("audio__seven");
-audio7.play();
-
-        }
+        else if(healthtwo.value == 40){
+          sprite1.src="beaten.png";
+          var audio7 = document.getElementById("audio__seven");
+          audio7.play();
        } 
+      }
    }, 350);
    }
    collision(ball2,goku)
@@ -101,9 +96,8 @@ audio7.play();
          if (playerBound.x > carRightBound.x - playerBound.width && playerBound.x < carRightBound.x + carRightBound.width && playerBound.y > carRightBound.y - playerBound.height && playerBound.y < carRightBound.y + carRightBound.height) {
           var audio5 = document.getElementById("audio__four");
         audio5.play();
-           scoretwo.innerHTML=score2++;
-  var end2 = scoretwo.innerHTML;
-  if(end2 == 5){
+        healthone.value -= 5;
+  if(healthone.value == 0){
     game.style.display="none";
     endgame.style.display="block";
     winner.innerHTML="GOKU !WINS";
@@ -111,7 +105,7 @@ audio7.play();
     audio2.play();
     audio.pause();
   }
-  else if(end2 == 4){
+  else if(healthone.value == 30){
     var audio6 = document.getElementById("audio__six");
     audio6.play();
 sprite.src="jirenbeaten.png";
