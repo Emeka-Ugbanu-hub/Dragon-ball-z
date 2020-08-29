@@ -85,7 +85,7 @@ animation: movei 4s ease-in-out infinite;
         height: 50px;
         border-radius: 50px;
         margin-top:-10em;
-        animation: ball 2s ease-in-out infinite;       
+        animation: ball 1s ease-in-out infinite;       
         left: 2em;
         position: absolute;
     }
