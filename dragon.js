@@ -81,6 +81,7 @@ function collision(ball2,goku){
   audio.pause();
         }
         else if(healthtwo.value == 40){
+          healthtwo.value.style.backgroundColor = "red";
           sprite1.src="beaten.png";
           var audio7 = document.getElementById("audio__seven");
           audio7.play();
