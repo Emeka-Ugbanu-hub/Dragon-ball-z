@@ -249,7 +249,7 @@ transition: 5s linear ease-in-out;
         display: none;
     }
 }
-@media only screen and (orientation:landscape) and (min-device-width:319px) and (max-device-width:700px){
+@media only screen and (orientation:landscape) and (min-device-width:320px) and (max-device-width:84px){
     .preamble{
 margin-left: 10em;
 
