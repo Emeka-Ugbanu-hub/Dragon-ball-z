@@ -1,0 +1,344 @@
+body{
+background-image:url("arena.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+overflow: hidden;
+}
+.instruction{
+    width: 30%;
+    position: absolute;
+    top: 6em;
+    right:30em;
+    opacity:0;
+    animation:first 5000s linear;
+    animation-delay: 5s;
+}
+@keyframes first {
+    from{ opacity:0.9;}
+    to{
+        opacity:0.9;   
+    }
+}
+.preamble{
+    width:50%;
+    height: 70vh;
+    background: white;
+    border-radius:10px;
+    margin:5em 0 0 20em;
+    text-align: center;
+    font-family: cursive;
+}
+.about{
+    opacity:0;
+    animation:fade 5s linear;
+}
+@keyframes fade {
+    from{ opacity:0.9;}
+    to{
+      opacity:0.1;    
+    }
+}
+.myimg{
+    width:150px;
+    height:150px;
+   margin:1em 0 0 0;
+   border-radius:80px;
+
+}
+.start{
+    width: 100px;
+    height: 45px;
+    background: linear-gradient(to right,blue,red);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+.start:hover{
+cursor: pointer;
+background: linear-gradient(to right,red,blue);
+}
+.game{
+    display:none;
+}
+.jiren{
+     position:relative;
+     width: 100px;
+     height: 30vh;
+     border-radius: 50px;
+   top:-1em ;
+animation: movei 4s ease-in-out infinite;
+}
+@keyframes movei {
+    0%{top: -1em;}
+    50%{top: 22em;}
+    100%{top: -1em;}
+}
+.sprite{
+    width: 150px;
+    margin-left: -1em;
+    margin-top: -1.3em;
+    }
+    .ball{
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        margin-top:-10em;
+        animation: ball 2s ease-in-out infinite;       
+        left: 2em;
+        position: absolute;
+    }
+    @keyframes ball {
+        from{left: 2em;}
+        to{left: 85em;}
+    }
+    .moving__ball{
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        left: -7em;
+        top: -6.5em;
+    }
+    .moving__ball__two{
+        width: 250px;
+        height: 250px;
+          position: absolute;
+          left: -5.5em;
+          top: -6em;
+          opacity: 0;
+    }
+    .goku{
+position: relative;
+left:74em;
+width: 10%;
+height:27vh;
+border-radius: 10px;
+transition: 5s linear ease-in-out;
+    }
+    .sprite__two{
+        width:200px;
+        margin-left: -1.5em;
+        margin-top: -0.5em;
+    } 
+    .ball__two{
+        width: 50px;
+        height: 50px;
+    border-radius:50px;
+    position: absolute;
+        bottom: 5em;
+        margin-left: 2em;
+    }
+    @keyframes balltwo {
+        from{margin-left: 9em;}
+        to{margin-left: -60em;}
+    }
+    .score{
+        display: flex;
+        justify-content: space-between;
+    }
+    .scoreone{
+        width:60px;
+        height:20px;
+        background:white;
+        border: 3px solid red;
+         text-align: center;
+         font-family: cursive;
+         border-radius:10px;
+    }
+    .scoretwo{
+        width:60px;
+        height:20px;
+        background:white;
+        border: 3px solid blue;
+       text-align: center;
+       font-family: cursive;
+       border-radius:10px;
+    }
+    .game__over{
+        background-image: url("gameover.jpg");
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+        background-size: contain;
+        height: 150vh;
+        width: 100%;
+        margin-top: -22em;
+        margin-left: 10em;
+        display: none;
+    }
+    .restart{
+        width: 200px;
+        height: 70px;
+        border: none;
+        background: linear-gradient(to right,blue,red);
+        color: white;
+        font-size: 1em;
+        font-weight: 900;
+        font-family: cursive;
+        float: center;
+        margin: 54em 0em 0em 33em;
+        outline: none;
+        border-radius: 25px;
+    }
+    .restart:hover{
+        cursor: pointer;
+    }
+    .winner__text{
+        position: absolute;
+        top: 8em;
+        left: 27em;
+        font-weight: 900;
+        transform: rotate(90deg);
+        font-family: cursive;
+        color: white;
+        font-size: 2em;
+    }
+.play{
+    background: blue;
+    width: 70px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+.stop{
+    background: red;
+    width: 70px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+.stop:hover{
+    cursor: pointer;
+}
+.play:hover{
+    cursor: pointer;
+}
+.up__button{
+    border-radius: 50px;
+    position: relative;
+    bottom:11.2em;
+    left: 38em;
+    width: 40px;
+    height:40px;
+    display: none;
+}
+.down__button{
+    border-radius: 50px;
+    position: relative;
+    bottom: -0.5em;
+    left: 38em;
+    width: 40px;
+    height:40px;
+    display: none;
+}
+.shoot{
+    position: relative;
+    width: 70px;
+    height: 45px;
+    top: 11.3em;
+    left: -1.1em;
+    display: none;
+}
+/*media query*/
+@media only screen and (orientation:portrait) and (min-device-width:319px) and (max-device-width:700px){
+    body{
+        display: none;
+    }
+}
+@media only screen and (orientation:landscape) and (min-device-width:319px) and (max-device-width:700px){
+    .preamble{
+margin-left: 10em;
+
+position: relative;
+overflow-y: scroll;
+    }
+    .instruction{
+        top: -1em;
+right: 9em;
+display:inline-block;
+    }
+    .stop{
+        margin-top:1em;
+        margin-bottom:1em;
+    }
+    .sprite{
+        width: 90px;
+        }
+        @keyframes movei {
+            0%{top: 0.5em;}
+            50%{top: 12em;}
+            100%{top: 0.5em;}
+        }
+        .goku{
+            left:36em;
+                }
+                .jiren{
+                    width: 52px;
+                    height:28vh;
+                }
+                .sprite__two{
+                    width:120px;
+                }
+                @keyframes ball {
+                    from{left: 1em;}
+                    to{left: 38em;}
+                }
+                 .ball{
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+        margin-top:-6em;       
+        left: 1em;
+    }
+      .moving__ball{
+        width: 170px;
+        height: 170px;
+        left: -4.7em;
+        top: -4.2em;
+    }
+    .ball__two{
+        width: 35px;
+        height: 35px;
+        top:1.2em;
+    }
+    .moving__ball__two{
+        width:170px;
+        height: 170px;
+        top: -4.3em;
+        margin-left: 1.5em;
+    }
+
+    .score{
+        justify-content: center;
+
+    }
+    .up__button{
+        display: block;
+    }
+    .down__button{
+        display: block;
+    }
+    .shoot{
+        display: block;
+    }
+    .game__over{
+width: 90%;
+height: 191vh;
+margin-left: 3em;
+    }
+    .restart{
+        margin: 40em 0em 0em 18em;
+        width: 160px;
+        height: 60px;
+    }
+    .winner__text{
+        transform: rotate(360deg);
+        top: 0.5em;
+        left: 10em;
+        font-size:1em;
+    }
+}
